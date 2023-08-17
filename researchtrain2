@@ -1,0 +1,16 @@
+import automaple.vkeys as vk
+import time
+
+time.sleep(3)
+while True:
+    vk.press("right", 1)
+    for i in range(4):
+        vk.press("alt", 2, up_time=0.05)
+        vk.press("shift", 1)
+        time.sleep(0.5)
+
+    vk.press("left", 1)
+    for i in range(4):
+        vk.press("alt", 2, up_time=0.05)
+        vk.press("shift", 1)
+        time.sleep(0.5)
