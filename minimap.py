@@ -119,12 +119,13 @@ class Minimap:
 
                     # Crop the frame to only show the minimap
                     minimap = self.frame[mm_tl[1]:mm_br[1], mm_tl[0]:mm_br[0]]
+                    path = 'templates/nameless.png'
+                    cv2.imwrite(path, minimap)
 
                     # Determine the player's position
                     player = multi_match(minimap, PLAYER_TEMPLATE, threshold=0.8)
                     if player:
                         config.player_pos = convert_to_relative(player[0], minimap)
-                        print(config.player_pos)
 
                     # Package display information to be polled by GUI
                     self.minimap = {
@@ -135,7 +136,7 @@ class Minimap:
 
                     if not self.ready:
                         self.ready = True
-                    time.sleep(0.001)
+                    time.sleep(0.01)
 
     def screenshot(self, delay=1):
         try:
@@ -196,7 +197,3 @@ def convert_to_relative(point, frame):
     y = point[1] / config.capture.minimap_ratio / frame.shape[0]
     return x, y
 
-c = Minimap()
-c.start()
-while True:
-    c._main()

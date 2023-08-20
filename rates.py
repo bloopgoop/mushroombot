@@ -26,8 +26,6 @@ class BattleAnalysis:
     per second
     """
     def __init__(self):
-        
-        config.rates = None
 
         self.frame = None
         self.ed_ratio = 1
@@ -48,6 +46,7 @@ class BattleAnalysis:
     def start(self):
         """Loads OCR and starts thread"""
 
+        print("[~] Starting rates capture")
         print("[~] Loading model...")
         try:
             self.model = load_model('ocr/model')
@@ -95,16 +94,15 @@ class BattleAnalysis:
                 # Image of enemies defeated
                 self.ed_sample = self.frame[ed_tl[1]:ed_br[1], ed_tl[0]:ed_br[0]]
 
-                print(str(identifier), "iterations | ", end='')
-
                 # Get images and store into folder every 3 secs
                 self.enemies_defeated = gD.getDigits(self.ed_sample, self.model)
                 identifier+= 1
-                print(self.enemies_defeated)
+
+                config.enemies_defeated = self.enemies_defeated
 
                 if not self.ready:
                     self.ready = True
-                time.sleep(3)
+                time.sleep(0.5)
 
     def screenshot(self, delay=1):
         try:
@@ -152,12 +150,3 @@ def single_match(frame, template):
     return top_left, bottom_right
 
 
-
-def main():
-    c = BattleAnalysis()
-    c.start()
-    while True:
-        time.sleep(100)
-        print("100 secs passed")
-
-main()

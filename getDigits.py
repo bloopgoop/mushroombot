@@ -109,9 +109,6 @@ def split(image):
     left_half = np.column_stack(left_half)
     right_half = np.column_stack(right_half)
 
-    print("lefthalf shape", left_half.shape)
-    print("righthalf shape", right_half.shape)
-
     # Reconstruct left half and right half to center the number
     target_size = (25, 25)
 

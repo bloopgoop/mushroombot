@@ -13,6 +13,17 @@ RESOURCES_DIR = 'resources'
 # The player's position relative to the minimap
 player_pos = (0, 0)
 
+# Time since last mob respawn
+time_since_spawn = 0
+
+time = None
+
+# Shares the enemies defeated rates
+rates = 0
+
+# Shares the enemeies defeated in total
+enemies_defeated = 0
+
 # Describes whether the main bot loop is currently running or not
 enabled = False
 
@@ -44,5 +55,3 @@ listener = None
 # Shares the gui to all modules
 gui = None
 
-# Shares the enemies defeated rates
-rates = None

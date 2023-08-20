@@ -1,0 +1,4 @@
+Q-learning
+
+States: (pos(x, y), time since last respawn)
+Actions: ((movement, skill))
