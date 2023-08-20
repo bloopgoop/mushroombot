@@ -1,4 +1,4 @@
-# mushroommacro
+# mushroombot
 
 This project attempts to simulate grinding in maplestory using computer vision and machine-learning techniques<br><br>
 
