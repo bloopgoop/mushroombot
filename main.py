@@ -20,7 +20,7 @@ battle_analysis.start()
 while not battle_analysis.ready:
     time.sleep(0.01)
 
-bot.start(mode="b1")
+bot.start(model="b1")
 while not bot.ready:
     time.sleep(0.01)
 
