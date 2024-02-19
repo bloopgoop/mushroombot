@@ -24,5 +24,5 @@ After processing, I created an OCR using a convolutional neural network with a c
 Training the bot is very slow, it takes more than an hour to get it to figure out a routine for farming. The battle analysis capture may generate wrong
 answers and may mess up the q-learning process. Runes detection and solving is not implemented. <br><br>
 
-Credits go out to auto-maple for the code to simulate key presses and for minimap positional capture.<br><br>
+Credits go out to [auto-maple](https://github.com/tanjeffreyz/auto-maple) for the code to simulate key presses and for minimap positional capture.<br><br>
 This bot was made for educational purposes only. 
